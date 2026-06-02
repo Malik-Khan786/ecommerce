@@ -1,0 +1,7 @@
+// Returns a data URI for a grey placeholder square — works fully offline
+export const FALLBACK_IMG = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100' height='100' fill='%23e2e8f0'/%3E%3Cpath d='M30 60 L45 45 a3 3 0 014 0 L60 60 M55 52 L62 45 a3 3 0 014 0 L72 60' stroke='%2394a3b8' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='38' cy='38' r='4' fill='%2394a3b8'/%3E%3C/svg%3E`
+
+export function onImgError(e) {
+    e.target.src = FALLBACK_IMG
+    e.target.onerror = null
+}
